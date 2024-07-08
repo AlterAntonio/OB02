@@ -58,3 +58,17 @@ class Admin(User):
     def black_list(self):
         print('Users in black list:')
         for user in black_list: print(user.user_data())
+
+admin = Admin(1, 'Antonio', user_list, black_list)
+user1 = User(2, 'Anfiska')
+user2 = User(3, 'Mr. Bond')
+
+print(admin.user_data())
+admin.add_user(user1)
+admin.add_user(user2)
+admin.remove_user(user2)
+admin.black_list()
+admin.restore_user(user2)
+admin.user_list()
+user2.set_name('Mr. Good')
+admin.user_list()
