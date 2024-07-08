@@ -1,6 +1,8 @@
+#Создание списков
 user_list = []
 black_list = []
 
+#Создание класса User
 class User:
     def __init__(self, id, name):
         self.__id = id
@@ -23,6 +25,7 @@ class User:
         about_user = f'ID: {self.__id}\nName: {self.__name}\nAccess level: {self._access}'
         return about_user
 
+#Создание производного класса Admin
 class Admin(User):
     def __init__(self, id, name, user_list, black_list):
         super().__init__(id, name)
@@ -59,10 +62,12 @@ class Admin(User):
         print('Users in black list:')
         for user in black_list: print(user.user_data())
 
+#Создание объектов
 admin = Admin(1, 'Antonio', user_list, black_list)
 user1 = User(2, 'Anfiska')
 user2 = User(3, 'Mr. Bond')
 
+#Проверка некоторых методов
 print(admin.user_data())
 admin.add_user(user1)
 admin.add_user(user2)
